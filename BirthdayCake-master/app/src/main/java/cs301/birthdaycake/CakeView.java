@@ -120,7 +120,14 @@ public class CakeView extends SurfaceView {
         canvas.drawRect(cakeLeft, top, cakeLeft + cakeWidth, bottom, cakePaint);
 
         //Now a candle in the center
-        drawCandle(canvas, cakeLeft + cakeWidth/2 - candleWidth/2, cakeTop);
+        //drawCandle(canvas, cakeLeft + cakeWidth/2 - candleWidth/2, cakeTop);
+        float oneThird = cakeWidth /3f; // float = stores numbers that can have decimals
+        float firstCandle = cakeLeft + oneThird - candleWidth / 2f;
+        float secondCandle = cakeLeft + 2 * oneThird - candleWidth / 2f;
+
+        drawCandle(canvas, firstCandle, cakeTop);
+        drawCandle(canvas, secondCandle, cakeTop);
+
 
     }//onDraw
 
